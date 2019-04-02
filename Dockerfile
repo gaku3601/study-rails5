@@ -4,6 +4,7 @@ COPY /app .
 RUN sudo apt-get update && \
     sudo apt-get install libpq-dev && \
     bundle install
+RUN rails db:migration
 EXPOSE 3000
 
 CMD [ "rails", "server", "-b", "0.0.0.0" ]
