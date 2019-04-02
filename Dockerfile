@@ -7,4 +7,5 @@ RUN sudo apt-get update && \
 RUN rails db:migration
 EXPOSE 3000
 
-CMD [ "rails", "server", "-b", "0.0.0.0" ]
+#CMD [ "rails", "server", "-b", "0.0.0.0" ]
+CMD bundle exec puma -t 5:5 -p 3000 -e production -C config/puma.rb
