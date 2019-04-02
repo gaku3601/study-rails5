@@ -1,7 +1,6 @@
 FROM bitnami/rails:5.2.3-0
 
 COPY /app .
-RUN sudo rails credentials:edit
 RUN sudo apt-get update && \
     sudo apt-get install libpq-dev && \
     sudo bundle install
