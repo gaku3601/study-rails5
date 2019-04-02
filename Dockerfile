@@ -1,6 +1,7 @@
 FROM bitnami/rails:5.2.3-0
 
 COPY /app .
+RUN sudo sudo chown -R `bitnami`:mt /opt/bitnami
 RUN sudo apt-get update && \
     sudo apt-get install libpq-dev && \
     bundle install
