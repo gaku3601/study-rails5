@@ -6,5 +6,5 @@ RUN sudo apt-get update && \
     sudo bundle install
 EXPOSE 3000
 
-CMD sudo rails db:migrate RAILS_ENV=production && \
-    sudo bundle exec puma -t 5:5 -e production -C config/puma.rb
+CMD rails db:migrate RAILS_ENV=production && \
+    bundle exec puma -t 5:5 -e production -C config/puma.rb
